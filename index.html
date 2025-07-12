@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>História Pronta com IA (Simulada)</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-container">
+    <div class="header">
+      <h1>História Pronta com IA</h1>
+      <select class="language-select">
+        <option selected>Português</option>
+        <option>English</option>
+      </select>
+    </div>
+
+    <div class="main-content">
+      <div class="input-panel">
+        <label for="tipo">Tipo de História:</label>
+        <select id="tipo">
+          <option value="funcional">Funcional</option>
+          <option value="técnica">Técnica</option>
+          <option value="correção">Correção</option>
+        </select>
+
+        <label for="objetivo">Qual é o objetivo da funcionalidade?</label>
+        <input type="text" id="objetivo" placeholder="Ex: Permitir login com biometria" />
+
+        <label for="beneficiario">Quem se beneficia?</label>
+        <input type="text" id="beneficiario" placeholder="Ex: Usuários do módulo de segurança" />
+
+        <label for="impacto">Qual o impacto no sistema?</label>
+        <input type="text" id="impacto" placeholder="Ex: Altera o fluxo de autenticação" />
+
+        <button onclick="gerarHistoria()">Gerar História com IA</button>
+      </div>
+
+      <div class="output-panel">
+        <div class="story-type-status">
+          <p><strong>Story Type</strong></p>
+          <ul>
+            <li>Structure <span class="check">✔</span></li>
+            <li>Value <span class="check">✔</span></li>
+            <li>Criteria <span class="pending">~</span></li>
+            <li>Impact <span class="cross">✘</span></li>
+          </ul>
+        </div>
+
+        <div class="output-box">
+          <h3>História Gerada</h3>
+          <pre id="historiaGerada" class="bloco-texto"></pre>
+
+          <h4>Critérios de Aceite (Gherkin)</h4>
+          <ul id="criterios" class="criterios-lista"></ul>
+        </div>
+
+        <div class="action-buttons">
+          <button>Editar</button>
+          <button>Validar</button>
+          <button>Exportar para Jira</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
